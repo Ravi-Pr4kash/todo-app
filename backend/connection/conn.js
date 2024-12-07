@@ -2,7 +2,7 @@
 
  const conn = async(req,res)=>{
    try {
-    await mongoose.connect("mongodb+srv://admin:admin@cluster0.tvfpf.mongodb.net/").then(()=>{
+    await mongoose.connect("mongodb+srv://admin:admin@cluster0.tvfpf.mongodb.net/todo-list").then(()=>{
         console.log("connected")
     })
    } catch (error) {
