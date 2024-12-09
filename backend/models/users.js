@@ -18,6 +18,8 @@ const UserSchema = new mongoose.Schema({
         type: mongoose.Types.ObjectId, 
         ref: "list"
     }]
+},{
+    timestamps: true
 });
 
 module.exports = mongoose.model("users", UserSchema); 

@@ -39,7 +39,6 @@ const JWT_SECRET = "RAviPRAKASH"
 
     const user = await User.findOne({
         email: email,
-        password: password
     })
 
     if(!user){
@@ -50,7 +49,7 @@ const JWT_SECRET = "RAviPRAKASH"
 
     const passwordMatched = await bcrypt.compare(password, user.password);
     
-    if(!password){
+    if(!passwordMatched){
         res.status(400).json({
             message: "Wrong Password"
         })
@@ -62,10 +61,6 @@ const JWT_SECRET = "RAviPRAKASH"
         },JWT_SECRET)
         res.json({
             token: token
-        })
-    }else{
-        res.status(400).json({
-            message: "incorrect credentials"
         })
     }
     

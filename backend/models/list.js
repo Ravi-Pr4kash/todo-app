@@ -5,14 +5,17 @@ const ListSchema = new mongoose.Schema({
         type: String,
         required: true,
     },
-    title: {
+    description: {
         type: String, 
         required: true
     },
-    list: [{
+    user: [{
         type: mongoose.Types.ObjectId, 
         ref: "users"
-    }] 
+    },
+], 
+},{
+    timestamps: true
 });
 
 module.exports = mongoose.model('list', ListSchema )
